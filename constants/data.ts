@@ -1,4 +1,22 @@
-import { footerLink, testimonial } from "./types";
+import { footerLink, stat, testimonial } from "./types";
+
+export const stats: stat[] = [
+  {
+    title: "User Active",
+    count: "3800+",
+    hasBorder: true,
+  },
+  {
+    title: "Trusted By Company",
+    count: "230+",
+    hasBorder: true,
+  },
+  {
+    title: "Transactions",
+    count: "$230m+",
+    hasBorder: false,
+  },
+];
 
 export const testimonials: testimonial[] = [
   {

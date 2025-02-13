@@ -1,27 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import ComponentWrapper from "../layouts/ComponentWrapper";
-import { feature } from "./HeroSection";
-import method from "../public/images/method.png";
 
 const FeaturesSection = () => {
-  const features: feature[] = [
-    {
-      name: "Rewards",
-      desc: "The best credit cards offer some tantalizing combinations of promotions and prizes",
-      icon: "/images/rewards.svg",
-    },
-    {
-      name: "100% Secured",
-      desc: "We take proactive steps make sure your information and transactions are secure.",
-      icon: "/images/secure.svg",
-    },
-    {
-      name: "Balance Transfer",
-      desc: "A balance transfer credit card can save you a lot of money in interest charges.",
-      icon: "/images/transfer.svg",
-    },
-  ];
   return (
     <>
       <ComponentWrapper>

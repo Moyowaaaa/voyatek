@@ -16,6 +16,7 @@
     "react-iconly": "^2.2.10",
     "react-icons": "^4.4.0",
     "react-loader-spinner": "^5.1.7-beta.1",
+    "split-type": "^0.3.4",
     "splitting": "^1.0.6"
   },
   "devDependencies": {

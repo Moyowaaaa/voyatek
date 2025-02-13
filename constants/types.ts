@@ -1,3 +1,5 @@
+export type stat = { title: string; count: string; hasBorder?: boolean };
+
 export type testimonial = {
   author: string;
 

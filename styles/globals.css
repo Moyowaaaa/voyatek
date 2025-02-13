@@ -153,7 +153,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  px: 2.525rem;
+  padding: 3.75rem 2.525rem;
   justify-content: space-between;
 }
 
@@ -167,17 +167,11 @@ button {
   );
   backdrop-filter: blur(5px);
   cursor: pointer;
+  transition: background 0.6s ease, backdrop-filter 0.6s ease;
 }
+
 .blurBackground {
   border-radius: 20px;
-  /* background: linear-gradient(
-    144deg,
-    #fff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
-  
-   */
   background: linear-gradient(
     -144deg,
     #fff -278.56%,
@@ -196,18 +190,6 @@ button {
   z-index: 109;
   color: #fdfdfd;
 }
-
-/* @font-face {
-  font-family: "inter-semi";
-  src: url("/fonts/Inter-SemiBold.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "inter-md";
-  src: url("/fonts/Inter-Medium.ttf");
-  font-display: swap;
-} */
 
 ::-webkit-scrollbar {
   width: 6px;
