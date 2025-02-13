@@ -1,15 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import { testimonial } from "./TestimonialSection";
+import { testimonial } from "../../constants/types";
 
 const TestimonialCard = ({ testimonial }: { testimonial: testimonial }) => {
   return (
     <>
-      <div
-        className="
-      testimonialCard
-      flex flex-col py-[3.75rem] gap-[40px] px-[2.525rem] justify-between"
-      >
+      <div className="testimonialCard flex flex-col py-[3.75rem] gap-[40px] px-[2.525rem] justify-between">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="43"

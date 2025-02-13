@@ -2,30 +2,10 @@ import React from "react";
 import ComponentWrapper from "../../layouts/ComponentWrapper";
 import TestimonialCard from "./TestimonialCard";
 import TestimonialClients from "./TestimonialClients";
-
-export type testimonial = {
-  author: string;
-
-  desc: string;
-};
+import SubscribeSection from "../SubscribeSection";
+import { testimonials } from "../../constants/data";
 
 const TestimonialSection = () => {
-  const testimonials: testimonial[] = [
-    {
-      author: "Herman Jensen",
-
-      desc: "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    },
-    {
-      author: "Steve Mark",
-      desc: "Money makes your life easier. If you're lucky to have it, you're lucky.",
-    },
-    {
-      author: "Kenn Gallagher",
-      desc: "It is usually people in the money business, finance, and international trade that are really rich.",
-    },
-  ];
-
   return (
     <ComponentWrapper>
       <div
@@ -33,7 +13,7 @@ const TestimonialSection = () => {
   min-h-screen max-h-max
   flex flex-col justify-center
   gap-[10rem]
-  py-[11.25rem]"
+  py-[11.25rem] "
         id="testimonialSection"
       >
         <div
@@ -50,13 +30,14 @@ const TestimonialSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 justify-between">
+          <div className="flex items-center justify-between ">
             {testimonials?.map((testimonial, index) => (
               <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </div>
 
           <TestimonialClients />
+          <SubscribeSection />
         </div>
       </div>
     </ComponentWrapper>

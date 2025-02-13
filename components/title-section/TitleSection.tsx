@@ -83,7 +83,7 @@ absolute bottom-0 mx-auto
                 <div className="flex items-center gap-[1.563rem] self-end">
                   <h1 className="text-[40px] font-[600]">{stat.count}</h1>
                   <p className="gradientText text-[1.25rem] min-w-max">
-                    {stat.title}
+                    {stat.title.toUpperCase()}
                   </p>
                 </div>
 

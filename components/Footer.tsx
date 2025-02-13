@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
-        <div className="fixed h-[26rem] h-max w-full bottom-0 ">
+        <div className="fixed h-[30rem] h-max w-full bottom-0 ">
           <div className="relative w-full max-w-[80rem] mx-auto h-full">
-            <div className="w-full h-full  pt-[4.5rem] pb-[3rem] flex items-start justify-between w-full">
+            <div className="w-full h-full  pt-[4.5rem] pb-[10rem]  flex items-start justify-between w-full">
               <div className="flex flex-col min-w-max gap-[2.125rem] ">
                 <div className="flex items-center gap-[4px] text-[1.125rem]">
                   <div className="relative h-[72.136px] w-[72.136px]">

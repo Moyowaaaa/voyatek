@@ -149,6 +149,15 @@ button {
 }
 
 .testimonialCard {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  px: 2.525rem;
+  justify-content: space-between;
+}
+
+.testimonialCard:hover {
   border-radius: 20px;
   background: linear-gradient(
     144deg,
@@ -156,12 +165,31 @@ button {
     #6d6d6d -78.47%,
     #11101d 91.61%
   );
-  width: max-content;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+.blurBackground {
+  border-radius: 20px;
+  /* background: linear-gradient(
+    144deg,
+    #fff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  
+   */
+  background: linear-gradient(
+    -144deg,
+    #fff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
   backdrop-filter: blur(5px);
 }
+
 .footer {
   position: relative;
-  min-height: 26rem;
+  min-height: 30rem;
   clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
   width: 100%;
   background: rgba(11, 10, 12, 0.6);
