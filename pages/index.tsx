@@ -10,7 +10,7 @@ import SectionThree from "../components/SectionThree";
 import PageWrapper from "../layouts/PageWrapper";
 import TitleSection from "../components/title-section/TitleSection";
 import HeroSection from "../components/HeroSection";
-import TestimonialSection from "../components/TestimonialSection";
+import TestimonialSection from "../components/testimonial-section/TestimonialSection";
 
 const Home: NextPage = () => {
   return (

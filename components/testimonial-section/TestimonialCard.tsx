@@ -39,9 +39,13 @@ const TestimonialCard = ({ testimonial }: { testimonial: testimonial }) => {
             </linearGradient>
           </defs>
         </svg>
-        <p className="paragraphText max-w-[18rem] self-start">
-          {testimonial.desc}
-        </p>
+
+        <div className=" min-h-[8rem]">
+          <p className="paragraphText max-w-[18rem] self-start">
+            {testimonial.desc}
+          </p>
+        </div>
+
         <div className="flex items-center gap-[1rem]">
           <div className="w-[48px] h-[48px]  rounded-full relative">
             <Image

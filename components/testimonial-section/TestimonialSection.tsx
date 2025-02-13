@@ -1,6 +1,7 @@
 import React from "react";
-import ComponentWrapper from "../layouts/ComponentWrapper";
+import ComponentWrapper from "../../layouts/ComponentWrapper";
 import TestimonialCard from "./TestimonialCard";
+import TestimonialClients from "./TestimonialClients";
 
 export type testimonial = {
   author: string;
@@ -40,8 +41,10 @@ const TestimonialSection = () => {
       mx-auto "
         >
           <div className="flex items-center gap-[8rem]">
-            <h1 className="titleText">What people are saying about us</h1>
-            <p className="paragraphText">
+            <h1 className="titleText max-w-[30rem]">
+              What people are saying about us
+            </h1>
+            <p className="paragraphText max-w-[28rem]">
               Everything you need to accept card payments and grow your business
               anywhere on the planet.
             </p>
@@ -52,6 +55,8 @@ const TestimonialSection = () => {
               <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </div>
+
+          <TestimonialClients />
         </div>
       </div>
     </ComponentWrapper>
