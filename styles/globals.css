@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  text-rendering: geometricPrecision;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  overscroll-behavior: none;
+  font-family: "poppins";
+
+  @media screen and (min-width: 1024px) {
+    font-size: calc(90vw / 1440 * 16);
+  }
+
+  @media screen and (min-width: 1450px) {
+    font-size: 16px;
+  }
+}
+
+.page-wrapper {
+  background: #07080d;
+  min-height: 100vh;
+  position: relative;
+}
+
+.page-content {
+  margin-top: 5rem;
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+#titleSection {
+  background: url("/images/rightEllipse.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: -15%;
+}
+
+#section {
+  background: url("/images/heroSectionEllipse.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  /* background-position-x: -15%; */
+}
+
+a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("/fonts/Poppins-Regular.ttf");
+  font-display: swap;
+}
+
+.largeTitleText {
+  color: #fff;
+  font-size: 4.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0.72px;
+}
+
+.titleText {
+  color: #fff;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%;
+  letter-spacing: 0.48px;
+}
+
+.gradientText {
+  background: radial-gradient(
+    64.33% 64.33% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paragraphText {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%;
+}
+
+.paragraphText span {
+  color: white;
+}
+
+button {
+  border-radius: 10px;
+  background: linear-gradient(
+    158deg,
+    #def9fa -43.27%,
+    #bef3f5 -21.24%,
+    #9dedf0 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #33bbcf 90.29%
+  );
+  padding: 1.188rem 2.063rem;
+  width: max-content;
+  height: max-content;
+  color: #00040e;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+#testimonialSection {
+  background: url("/images/testimonialEllipse.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+}
+
+.testimonialCard {
+  border-radius: 20px;
+  background: linear-gradient(
+    144deg,
+    #fff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  width: max-content;
+  backdrop-filter: blur(5px);
+}
+
+/* @font-face {
+  font-family: "inter-semi";
+  src: url("/fonts/Inter-SemiBold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "inter-md";
+  src: url("/fonts/Inter-Medium.ttf");
+  font-display: swap;
+} */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  display: none;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background: black;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
