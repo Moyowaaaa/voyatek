@@ -8,6 +8,10 @@ import { stats } from "../../constants/data";
 import gsap from "gsap";
 import Image from "next/image";
 
+import transparent from "../../public/images/transparentCard.png";
+import card from "../../public/images/card.png";
+import opaque from "../../public/images/opaqueCard.png";
+
 const TitleSection = () => {
   const titleSectionRef = useRef<HTMLElement | null>(null);
   const titleContentRef = useRef<HTMLDivElement | null>(null);
@@ -16,14 +20,14 @@ const TitleSection = () => {
   // useEffect(() => {
   //   const children = titleSectionRef.current?.children;
   //   if (children) {
-  //     gsap.set(children, { opacity: 0 });
+  //     gsap.set([children[0], children[1]], { opacity: 0 });
 
   //     const tl = gsap.timeline({
   //       delay: 2,
   //       defaults: { duration: 2, ease: "power4.inOut" },
   //     });
   //     tl.fromTo(
-  //       [children],
+  //       [children[0], children[1]],
   //       {
   //         y: 100,
   //         opacity: 0,
@@ -53,7 +57,7 @@ const TitleSection = () => {
   return (
     <ComponentWrapper>
       <section
-        className="relative text-white min-h-screen flex flex-col justify-center"
+        className="relative text-white min-h-screen  flex flex-col justify-center"
         id="titleSection"
         ref={titleSectionRef}
       >
@@ -85,7 +89,7 @@ const TitleSection = () => {
           <div></div>
         </div>
 
-        <div className="w-full flex justify-center absolute bottom-0">
+        <div className="w-full flex justify-center absolute bottom-10">
           <div className="w-full max-w-[80rem] flex justify-between">
             {stats?.map((stat, index) => (
               <div
@@ -107,16 +111,123 @@ const TitleSection = () => {
         </div>
 
         <div
-          className=" 
-     w-screen
-        overflow-hidden
-        absolute -right-0 h-full flex items-end
-        pl-[10rem] "
+          className="  w-full overflow-hidden absolute -right-0 h-full flex items-end pl-[10rem] z-50"
+          id="titleImageContainer"
         >
-          <img
-            src={"/images/titleHand.png"}
+          <div className="absolute !top-[10vh] !left-[55%]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="101"
+              height="101"
+              viewBox="0 0 101 101"
+              fill="none"
+            >
+              <path
+                d="M47.2192 100.884C19.3322 99.0093 -1.75885 74.8718 0.115905 47.2192C2.22501 19.3322 26.1282 -1.75885 54.0152 0.115905C81.6678 2.22501 102.759 26.1282 100.884 54.0152C99.0093 81.6678 74.8718 102.759 47.2192 100.884Z"
+                fill="url(#paint0_radial_38_950)"
+              />
+              <defs>
+                <radialGradient
+                  id="paint0_radial_38_950"
+                  cx="0"
+                  cy="0"
+                  r="1"
+                  gradientUnits="userSpaceOnUse"
+                  gradientTransform="translate(71.8682 36.0489) rotate(93.8705) scale(64.9684)"
+                >
+                  <stop offset="0.00887753" stopColor="#DEF9FA" />
+                  <stop offset="0.1723" stopColor="#BEF3F5" />
+                  <stop offset="0.4204" stopColor="#9DEDF0" />
+                  <stop offset="0.5512" stopColor="#7DE7EB" />
+                  <stop offset="0.7154" stopColor="#5CE1E6" />
+                  <stop offset="1" stopColor="#33BBCF" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div className="absolute !top-[55vh] !left-[58%]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 101 101"
+              fill="none"
+            >
+              <path
+                d="M47.2192 100.884C19.3322 99.0093 -1.75885 74.8718 0.115905 47.2192C2.22501 19.3322 26.1282 -1.75885 54.0152 0.115905C81.6678 2.22501 102.759 26.1282 100.884 54.0152C99.0093 81.6678 74.8718 102.759 47.2192 100.884Z"
+                fill="url(#paint0_radial_38_950)"
+              />
+              <defs>
+                <radialGradient
+                  id="paint0_radial_38_950"
+                  cx="0"
+                  cy="0"
+                  r="1"
+                  gradientUnits="userSpaceOnUse"
+                  gradientTransform="translate(71.8682 36.0489) rotate(93.8705) scale(64.9684)"
+                >
+                  <stop offset="0.00887753" stopColor="#DEF9FA" />
+                  <stop offset="0.1723" stopColor="#BEF3F5" />
+                  <stop offset="0.4204" stopColor="#9DEDF0" />
+                  <stop offset="0.5512" stopColor="#7DE7EB" />
+                  <stop offset="0.7154" stopColor="#5CE1E6" />
+                  <stop offset="1" stopColor="#33BBCF" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div className="absolute !top-[50vh] !left-[85%]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="68"
+              height="68"
+              viewBox="0 0 101 101"
+              fill="none"
+            >
+              <path
+                d="M47.2192 100.884C19.3322 99.0093 -1.75885 74.8718 0.115905 47.2192C2.22501 19.3322 26.1282 -1.75885 54.0152 0.115905C81.6678 2.22501 102.759 26.1282 100.884 54.0152C99.0093 81.6678 74.8718 102.759 47.2192 100.884Z"
+                fill="url(#paint0_radial_38_950)"
+              />
+              <defs>
+                <radialGradient
+                  id="paint0_radial_38_950"
+                  cx="0"
+                  cy="0"
+                  r="1"
+                  gradientUnits="userSpaceOnUse"
+                  gradientTransform="translate(71.8682 36.0489) rotate(93.8705) scale(64.9684)"
+                >
+                  <stop offset="0.00887753" stopColor="#DEF9FA" />
+                  <stop offset="0.1723" stopColor="#BEF3F5" />
+                  <stop offset="0.4204" stopColor="#9DEDF0" />
+                  <stop offset="0.5512" stopColor="#7DE7EB" />
+                  <stop offset="0.7154" stopColor="#5CE1E6" />
+                  <stop offset="1" stopColor="#33BBCF" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <Image
+            src={card}
             alt=""
-            className="h-full w-full object-cover absolute "
+            fill
+            className="rotate-[20deg] !w-[450px] !h-[400px] object-contain absolute !top-[5vh] !left-[60%] "
+          />
+
+          <Image
+            src={opaque}
+            alt=""
+            fill
+            className="rotate-[20deg] !w-[450px] !h-[400px] object-contain absolute !top-[15vh] !left-[60%] "
+          />
+          <Image
+            src={transparent}
+            alt=""
+            fill
+            className="rotate-[20deg] !w-[290px] !h-[200px] object-contain absolute !top-[35vh] !left-[65%] "
           />
         </div>
       </section>

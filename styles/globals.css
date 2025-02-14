@@ -59,6 +59,21 @@ html {
   /* background-position-x: -15%; */
 }
 
+#titleImageContainer {
+  background: url("/images/titleHand.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 25%;
+}
+
+@media screen and (min-width: 1024px) {
+  #titleImageContainer {
+    background-position-y: 35%;
+    background-position-x: 200%;
+  }
+}
+
 a {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
