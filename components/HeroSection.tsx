@@ -45,6 +45,21 @@ const HeroSection = () => {
       },
     });
 
+    titleHeads.forEach((title) => {
+      gsap.from(title.children, {
+        yPercent: 200,
+        ease: "power3.inOut",
+        duration: 1.8,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: title,
+          scrub: 2,
+          start: "top bottom+=20%",
+          end: "center top+=20%",
+        },
+      });
+    });
+
     descParagraphText.lines?.forEach((line, index) => {
       gsap.from(line, {
         y: 200,
@@ -58,21 +73,6 @@ const HeroSection = () => {
           start: "100% +=100%",
           end: "+=10%",
           scrub: 2,
-        },
-      });
-    });
-
-    titleHeads.forEach((title) => {
-      gsap.from(title.children, {
-        yPercent: 200,
-        ease: "power3.inOut",
-        duration: 1.8,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: title,
-          scrub: 2,
-          start: "top bottom+=20%",
-          end: "center top+=20%",
         },
       });
     });

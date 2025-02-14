@@ -9,6 +9,8 @@ import gsap from "gsap";
 
 const TitleSection = () => {
   const titleSectionRef = useRef<HTMLElement | null>(null);
+  const titleContentRef = useRef<HTMLDivElement | null>(null);
+  const paragraphTextRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const children = titleSectionRef.current?.children;
@@ -19,7 +21,6 @@ const TitleSection = () => {
         delay: 2,
         defaults: { duration: 2, ease: "power4.inOut" },
       });
-
       tl.fromTo(
         [children],
         {
@@ -35,6 +36,11 @@ const TitleSection = () => {
           opacity: 1,
         },
         "-=1"
+      ).fromTo(
+        paragraphTextRef.current && paragraphTextRef.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+        "-=0.6"
       );
 
       return () => {
@@ -52,19 +58,28 @@ const TitleSection = () => {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-[4rem] max-w-[80rem] mx-auto">
           <div className="flex flex-col gap-[2.5rem] min-w-max">
-            <div className="flex flex-col gap-[0.75rem] relative">
+            <div
+              className="
+            max-h-max 
+            flex flex-col gap-[0.75rem] relative"
+            >
               <DiscountBar />
-              <h1 className="largeTitleText min-w-[45rem] max-w-[45rem]">
-                The Next <span className="gradientText">Generation</span>{" "}
-                Payment Method.
-              </h1>
+              <div className="max-h-max overflow-hidden " ref={titleContentRef}>
+                <h1 className=" largeTitleText min-w-[45rem] max-w-[45rem]">
+                  The Next <span className="gradientText">Generation</span>{" "}
+                  Payment Method.
+                </h1>
+              </div>
+
               <GetStartedButton />
             </div>
-            <p className="paragraphText max-w-[30rem]">
-              Our team of experts uses a methodology to identify the credit
-              cards most likely to fit your needs.
-              <br /> We examine annual percentage rates, annual fees.
-            </p>
+            <div className="min-h-max w-full ">
+              <p className="paragraphText max-w-[30rem]" ref={paragraphTextRef}>
+                Our team of experts uses a methodology to identify the credit
+                cards most likely to fit your needs.
+                <br /> We examine annual percentage rates, annual fees.
+              </p>
+            </div>
           </div>
           <div></div>
         </div>

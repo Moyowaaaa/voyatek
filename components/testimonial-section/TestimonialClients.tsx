@@ -16,7 +16,6 @@ const TestimonialClients = () => {
         ease: "power3.inOut",
         duration: 1.2,
         opacity: 0,
-        delay: 0.5,
       });
     }
   }, [onScreen]);
