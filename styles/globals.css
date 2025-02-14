@@ -140,6 +140,10 @@ button {
   line-height: 150%;
 }
 
+button:hover {
+  text-decoration: underline;
+}
+
 #testimonialSection {
   background: url("/images/testimonialEllipse.png");
   background-size: contain;
@@ -171,13 +175,6 @@ button {
 }
 
 .blurBackground {
-  border-radius: 20px;
-  background: linear-gradient(
-    -144deg,
-    #fff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
   backdrop-filter: blur(5px);
 }
 

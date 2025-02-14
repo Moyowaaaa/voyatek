@@ -25,7 +25,7 @@ const GetStartedButton = () => {
   return (
     <>
       <div
-        className="absolute top-20 right-24 h-[140px] max-h-[140px] w-[140px] max-w-[140px] border-2 border-[#5CE1E6] rounded-full
+        className="absolute top-20 right-24 h-[8.75rem] max-h-[8.75rem] w-[8.75rem] max-w-[8.75rem] border-2 border-[#5CE1E6] hover:border-[white] hover:!text-[#5CE1E6] cursor-pointer rounded-full
       flex items-center justify-center
       
       "
