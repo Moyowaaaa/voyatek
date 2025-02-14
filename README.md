@@ -1,6 +1,8 @@
 # Voyatek FE Dev Assessment
 
 - My Solution to Voyatek's Frontend Developer Assessment
+- Moyowa Etchie
+- [Live Link](https://voyatek-assessment-two.vercel.app/).
 
 ## Tools and Technologies
 
