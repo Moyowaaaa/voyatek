@@ -91,6 +91,7 @@ const HeroSection = () => {
       heroCardTl.to(card, {
         background:
           "linear-gradient(153deg, rgba(255, 255, 255, 0.00) -341.94%, #14101D 95.11%)",
+        boxShadow: "0px 10px 5px -10px rgba(66, 71, 91, 0.10)",
         duration: 1,
         ease: "power3.inOut",
       });
@@ -142,7 +143,7 @@ const HeroSection = () => {
                   <Image src={feature.icon} fill alt="" loading="eager" />
                 </div>
                 <div className="flex flex-col gap-[0.5rem]">
-                  <p className="paragraphText text-white">{feature.name}</p>
+                  <p className="paragraphText !text-white">{feature.name}</p>
                   <p className="paragraphText text-base max-w-[22rem]">
                     {feature.desc}
                   </p>
