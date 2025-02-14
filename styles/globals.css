@@ -51,12 +51,19 @@ html {
   background-position-x: -15%, right;
 }
 
+#hero-section {
+  background: url("/images/Ellipsee.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: -20%;
+}
+
 #section {
   background: url("/images/heroSectionEllipse.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: center;
-  /* background-position-x: -15%; */
 }
 
 #titleImageContainer {

@@ -16,43 +16,53 @@ const TitleSection = () => {
   const titleSectionRef = useRef<HTMLElement | null>(null);
   const titleContentRef = useRef<HTMLDivElement | null>(null);
   const paragraphTextRef = useRef<HTMLDivElement | null>(null);
+  const titleImageContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // useEffect(() => {
-  //   const children = titleSectionRef.current?.children;
-  //   if (children) {
-  //     gsap.set([children[0], children[1]], { opacity: 0 });
+  useEffect(() => {
+    const children = titleSectionRef.current?.children;
+    if (children) {
+      gsap.set([children[0], children[1]], { opacity: 0 });
 
-  //     const tl = gsap.timeline({
-  //       delay: 2,
-  //       defaults: { duration: 2, ease: "power4.inOut" },
-  //     });
-  //     tl.fromTo(
-  //       [children[0], children[1]],
-  //       {
-  //         y: 100,
-  //         opacity: 0,
-  //       },
-  //       {
-  //         y: 0,
-  //         ease: "power3.inOut",
-  //         stagger: 0.1,
-  //         delay: 0.5,
-  //         duration: 1,
-  //         opacity: 1,
-  //       },
-  //       "-=1"
-  //     ).fromTo(
-  //       paragraphTextRef.current && paragraphTextRef.current,
-  //       { y: 100, opacity: 0 },
-  //       { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-  //       "-=0.6"
-  //     );
+      const tl = gsap.timeline({
+        delay: 2,
+        defaults: { duration: 2, ease: "power4.inOut" },
+      });
+      tl.fromTo(
+        [children[0], children[1]],
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          ease: "power3.inOut",
+          stagger: 0.1,
+          delay: 0.5,
+          duration: 1,
+          opacity: 1,
+        },
+        "-=1"
+      ).fromTo(
+        paragraphTextRef.current && paragraphTextRef.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+        "-=0.6"
+      );
 
-  //     return () => {
-  //       tl.kill();
-  //     };
-  //   }
-  // }, []);
+      if (titleImageContainerRef.current) {
+        tl.fromTo(
+          titleImageContainerRef.current,
+          { x: 100, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1, ease: "power2.out" },
+          "-=0.6"
+        );
+      }
+
+      return () => {
+        tl.kill();
+      };
+    }
+  }, []);
 
   return (
     <ComponentWrapper>
@@ -62,12 +72,8 @@ const TitleSection = () => {
         ref={titleSectionRef}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-[4rem] max-w-[80rem] mx-auto">
-          <div className="flex flex-col gap-[2.5rem] min-w-max">
-            <div
-              className="
-            max-h-max 
-            flex flex-col gap-[0.75rem] relative"
-            >
+          <div className="flex flex-col gap-[2.5rem] min-w-max z-10">
+            <div className=" max-h-max  flex flex-col gap-[0.75rem] relative">
               <DiscountBar />
               <div className="max-h-max overflow-hidden " ref={titleContentRef}>
                 <h1 className=" largeTitleText min-w-[45rem] max-w-[45rem]">
@@ -111,8 +117,9 @@ const TitleSection = () => {
         </div>
 
         <div
-          className="  w-full overflow-hidden absolute -right-0 h-full flex items-end pl-[10rem] z-50"
+          className="  w-full overflow-hidden absolute -right-0 h-full flex items-end pl-[10rem] "
           id="titleImageContainer"
+          ref={titleImageContainerRef}
         >
           <div className="absolute !top-[10vh] !left-[55%]">
             <svg
