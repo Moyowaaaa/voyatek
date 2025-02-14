@@ -6,48 +6,49 @@ import DiscountBar from "./components/DiscountBar";
 import GetStartedButton from "./components/GetStartedButton";
 import { stats } from "../../constants/data";
 import gsap from "gsap";
+import Image from "next/image";
 
 const TitleSection = () => {
   const titleSectionRef = useRef<HTMLElement | null>(null);
   const titleContentRef = useRef<HTMLDivElement | null>(null);
   const paragraphTextRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const children = titleSectionRef.current?.children;
-    if (children) {
-      gsap.set(children, { opacity: 0 });
+  // useEffect(() => {
+  //   const children = titleSectionRef.current?.children;
+  //   if (children) {
+  //     gsap.set(children, { opacity: 0 });
 
-      const tl = gsap.timeline({
-        delay: 2,
-        defaults: { duration: 2, ease: "power4.inOut" },
-      });
-      tl.fromTo(
-        [children],
-        {
-          y: 100,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          ease: "power3.inOut",
-          stagger: 0.1,
-          delay: 0.5,
-          duration: 1,
-          opacity: 1,
-        },
-        "-=1"
-      ).fromTo(
-        paragraphTextRef.current && paragraphTextRef.current,
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-        "-=0.6"
-      );
+  //     const tl = gsap.timeline({
+  //       delay: 2,
+  //       defaults: { duration: 2, ease: "power4.inOut" },
+  //     });
+  //     tl.fromTo(
+  //       [children],
+  //       {
+  //         y: 100,
+  //         opacity: 0,
+  //       },
+  //       {
+  //         y: 0,
+  //         ease: "power3.inOut",
+  //         stagger: 0.1,
+  //         delay: 0.5,
+  //         duration: 1,
+  //         opacity: 1,
+  //       },
+  //       "-=1"
+  //     ).fromTo(
+  //       paragraphTextRef.current && paragraphTextRef.current,
+  //       { y: 100, opacity: 0 },
+  //       { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+  //       "-=0.6"
+  //     );
 
-      return () => {
-        tl.kill();
-      };
-    }
-  }, []);
+  //     return () => {
+  //       tl.kill();
+  //     };
+  //   }
+  // }, []);
 
   return (
     <ComponentWrapper>
@@ -103,6 +104,20 @@ const TitleSection = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div
+          className=" 
+     w-screen
+        overflow-hidden
+        absolute -right-0 h-full flex items-end
+        pl-[10rem] "
+        >
+          <img
+            src={"/images/titleHand.png"}
+            alt=""
+            className="h-full w-full object-cover absolute "
+          />
         </div>
       </section>
     </ComponentWrapper>

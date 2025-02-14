@@ -43,11 +43,12 @@ html {
 }
 
 #titleSection {
-  background: url("/images/rightEllipse.png");
-  background-size: contain;
+  background: url("/images/titleSectionEllipse.png"),
+    url("/images/topEllipse.png");
+  background-size: contain contain;
   background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: -15%;
+  background-position-y: center, top;
+  background-position-x: -15%, right;
 }
 
 #section {
