@@ -15,7 +15,7 @@ const FeaturesSection = () => {
   useEffect(() => {
     const titles = document.querySelectorAll("#featureTitle");
     const images = document.querySelectorAll("#featureImage");
-    const heroTexts = document.querySelectorAll(".about-hero-text"); // Changed to class selector
+    const heroTexts = document.querySelectorAll(".about-hero-text");
 
     titles.forEach((title) => {
       gsap.fromTo(
