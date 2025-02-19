@@ -6,21 +6,21 @@ import { ArrowUp } from "react-iconly";
 const GetStartedButton = () => {
   const buttonRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (buttonRef.current) {
-      gsap.set(buttonRef.current, {
-        yPercent: 200,
-        opacity: 0,
-      });
-      gsap.to(buttonRef.current, {
-        yPercent: 0,
-        duration: 1,
-        delay: 2,
-        ease: "power3.inOut",
-        opacity: 1,
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (buttonRef.current) {
+  //     gsap.set(buttonRef.current, {
+  //       yPercent: 200,
+  //       opacity: 0,
+  //     });
+  //     gsap.to(buttonRef.current, {
+  //       yPercent: 0,
+  //       duration: 1,
+  //       delay: 2,
+  //       ease: "power3.inOut",
+  //       opacity: 1,
+  //     });
+  //   }
+  // }, []);
 
   return (
     <>

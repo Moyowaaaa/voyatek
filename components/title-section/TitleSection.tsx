@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ComponentWrapper from "../../layouts/ComponentWrapper";
 import DiscountBar from "./components/DiscountBar";
 import GetStartedButton from "./components/GetStartedButton";
@@ -57,6 +57,33 @@ const TitleSection = () => {
           "-=0.6"
         );
       }
+
+      gsap.set("#opaque", { opacity: 0 });
+      gsap.set("#card", { opacity: 1, yPercent: 20 });
+      gsap.set("#transparent", { opacity: 0 });
+      gsap.set(["#circle1", "#circle2", "#circle3"], { opacity: 0 });
+
+      tl.to("#card", { yPercent: 0, duration: 1, ease: "power4.inOut" })
+        .to(
+          "#opaque",
+          { opacity: 1, duration: 1, ease: "power4.inOut" },
+          "-=0.9"
+        )
+        .to(
+          "#transparent",
+          { opacity: 1, duration: 1, ease: "power4.inOut" },
+          "-=0.9"
+        )
+        .to(
+          ["#circle1", "#circle2", "#circle3"],
+          {
+            opacity: 1,
+            duration: 1,
+            ease: "power4.inOut",
+            stagger: 0.2,
+          },
+          "-=2"
+        );
 
       return () => {
         tl.kill();
@@ -121,7 +148,7 @@ const TitleSection = () => {
           id="titleImageContainer"
           ref={titleImageContainerRef}
         >
-          <div className="absolute !top-[10vh] !left-[55%]">
+          <div className="absolute !top-[10vh] !left-[55%]" id="circle1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="101"
@@ -153,7 +180,7 @@ const TitleSection = () => {
             </svg>
           </div>
 
-          <div className="absolute !top-[55vh] !left-[58%]">
+          <div className="absolute !top-[55vh] !left-[58%]" id="circle2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -185,7 +212,7 @@ const TitleSection = () => {
             </svg>
           </div>
 
-          <div className="absolute !top-[50vh] !left-[85%]">
+          <div className="absolute !top-[50vh] !left-[85%]" id="circle3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="68"
@@ -221,20 +248,23 @@ const TitleSection = () => {
             src={card}
             alt=""
             fill
-            className="rotate-[20deg] !w-[450px] !h-[400px] object-contain absolute !top-[5vh] !left-[60%] "
+            id="card"
+            className="rotate-[2deg] !w-[450px] !h-[400px] object-contain absolute !top-[50px] !left-[61%] "
           />
 
           <Image
             src={opaque}
             alt=""
             fill
-            className="rotate-[20deg] !w-[450px] !h-[400px] object-contain absolute !top-[15vh] !left-[60%] "
+            id="opaque"
+            className="rotate-[2deg] !w-[500px] !h-[400px] object-contain absolute !top-[15vh] !left-[60%] "
           />
           <Image
             src={transparent}
             alt=""
             fill
-            className="rotate-[20deg] !w-[290px] !h-[200px] object-contain absolute !top-[35vh] !left-[65%] "
+            id="transparent"
+            className="rotate-[2deg] !w-[350px] !h-[200px] object-contain absolute !top-[35vh] !left-[65%] "
           />
         </div>
       </section>
